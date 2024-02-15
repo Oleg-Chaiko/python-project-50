@@ -20,14 +20,16 @@ def plain(diff, current_key=''):
                 if isinstance(v['initial_value'], dict):
                     in_val = '[complex value]'
                 else:
-                    in_val = v['initial_value']
+                    i_val = v['initial_value']
+                    in_val = f"'{i_val}'"
                 if isinstance(v['current_value'], dict):
                     cur_val = '[complex value]'
                 else:
-                    cur_val = v['current_value']
+                    c_val = v['current_value']
+                    cur_val = f"'{c_val}'"
                 result.append(
                     f"Property '{current_key}{k}'\
- was updated. From '{in_val}' to '{cur_val}'"
+ was updated. From {in_val} to {cur_val}"
                 )
             case 'unchanged':
                 if isinstance(v['value'], dict):
