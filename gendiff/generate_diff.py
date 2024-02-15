@@ -7,7 +7,7 @@ def generate_diff(fir_file, sec_file, format='stylish'):
     diff = creat_diff(first_data, second_data)
     match format:
         case 'stylish':
-            return stylish(diff)
+            return stylish(diff)[:-1]
         case 'plain':
             return plain(diff)
         case 'json':
