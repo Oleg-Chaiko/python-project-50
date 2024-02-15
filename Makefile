@@ -4,18 +4,11 @@ install:
 test:
 	poetry run pytest -vv
 
-test-coverage:
-	poetry run pytest --cov=hexlet_python_package --cov-report xml
-
 lint:
 	poetry run flake8 gendiff
 
-selfcheck:
-	poetry check
+stylish: 
+	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.yaml
 
-check: selfcheck test lint
-
-build: check
-	poetry build
-
-.PHONY: install test lint selfcheck check build
+plain:
+	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.yaml --format plain

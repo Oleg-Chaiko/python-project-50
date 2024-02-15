@@ -1,5 +1,5 @@
 import argparse
-from gendiff import parser, generate_diff, stylish
+from gendiff import parser, generate_diff, stylish, plain
 
 
 def get_result(first_file, second_file, format):
@@ -9,6 +9,8 @@ def get_result(first_file, second_file, format):
     match format:
         case 'stylish':
             return stylish(diff)
+        case 'plain':
+            return plain(diff)
 
 
 def getargs():
