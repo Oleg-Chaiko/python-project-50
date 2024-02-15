@@ -1,5 +1,5 @@
 import argparse
-from gendiff import get_result
+from gendiff import generate_diff
 
 
 def getargs():
@@ -15,7 +15,7 @@ def getargs():
 
 def main():
     args = getargs()
-    print(get_result(args.first_file, args.second_file, args.format))
+    print(generate_diff(args.first_file, args.second_file, args.format))
 
 
 if __name__ == 'main':

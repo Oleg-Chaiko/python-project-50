@@ -3,7 +3,7 @@ from gendiff.creat_diff import creat_diff
 from gendiff.formaters.stylish import stylish
 from gendiff.formaters.plain import plain
 from gendiff.formaters.to_json import to_json
-from gendiff.generate_diff import get_result, generate_diff
+from gendiff.generate_diff import generate_diff
 
 
 __all__ = (
@@ -12,6 +12,5 @@ __all__ = (
     'stylish',
     'plain',
     'to_json',
-    'get_result',
     'generate_diff'
 )
