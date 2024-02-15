@@ -1,5 +1,5 @@
 import pytest
-from gendiff.scripts.gendiff import get_result
+from gendiff import get_result
 
 
 @pytest.fixture()

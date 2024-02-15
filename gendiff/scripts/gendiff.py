@@ -1,18 +1,5 @@
 import argparse
-from gendiff import parser, generate_diff, stylish, plain, to_json
-
-
-def get_result(first_file, second_file, format):
-    first_data = parser(first_file)
-    second_data = parser(second_file)
-    diff = generate_diff(first_data, second_data)
-    match format:
-        case 'stylish':
-            return stylish(diff)
-        case 'plain':
-            return plain(diff)
-        case 'json':
-            return to_json(diff)
+from gendiff import get_result
 
 
 def getargs():
