@@ -1,6 +1,12 @@
 install:
 	poetry install
 
+build:
+	poetry build
+
+package-install:
+	python3 -m pip install --force-reinstall dist/*.whl
+	
 test:
 	poetry run pytest -vv
 
@@ -12,3 +18,6 @@ stylish:
 
 plain:
 	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.yaml --format plain
+
+json:
+	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.yaml --format json
