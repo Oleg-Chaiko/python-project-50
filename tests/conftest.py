@@ -93,8 +93,8 @@ def test_diff():
             'value': {
                 'follow': {
                     'status': 'added',
-                     'value': False
-                }, 
+                    'value': False
+                },
                 'setting1': {
                     'status': 'unchanged',
                     'value': 'Value 1'
@@ -102,12 +102,12 @@ def test_diff():
                 'setting2': {
                     'status': 'deleted',
                     'value': 200
-                }, 
+                },
                 'setting3': {
                     'status': 'changed',
                     'initial_value': True,
                     'current_value': None
-                }, 
+                },
                 'setting4': {
                     'status': 'added',
                     'value': 'blah blah'
@@ -238,4 +238,3 @@ def mini_diff():
             'value': True
         }
     }
-

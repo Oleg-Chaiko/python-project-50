@@ -13,6 +13,9 @@ test:
 lint:
 	poetry run flake8 gendiff
 
+lint-test:
+	poetry run flake8 tests
+
 stylish: 
 	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.yaml
 

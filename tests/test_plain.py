@@ -1,6 +1,7 @@
 from gendiff import plain
 import pytest
 
+
 @pytest.fixture(params=["1", "2"])
 def result_string(request):
     file = open(f"tests/fixtures/plain_result_{request.param}.txt")

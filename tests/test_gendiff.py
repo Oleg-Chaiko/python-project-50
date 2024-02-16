@@ -9,8 +9,7 @@ def result_string():
 
 
 def test_stylish_converter(result_string):
-        file_1_path = 'tests/fixtures/file1.json'
-        file_2_path = 'tests/fixtures/file2.json'
-        format = 'stylish'
-        assert generate_diff(file_1_path, file_2_path, format) == result_string
-
+    file_1_path = 'tests/fixtures/file1.json'
+    file_2_path = 'tests/fixtures/file2.json'
+    format = 'stylish'
+    assert generate_diff(file_1_path, file_2_path, format) == result_string
