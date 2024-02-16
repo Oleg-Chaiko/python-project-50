@@ -17,7 +17,7 @@ def plain(diff, current_key=''):
                 result.append(
                     f"Property '{current_key}{k}'\
  was added with value: {val}"
-                    )
+                )
             case 'deleted':
                 result.append(f"Property '{current_key}{k}' was removed")
             case 'changed':
