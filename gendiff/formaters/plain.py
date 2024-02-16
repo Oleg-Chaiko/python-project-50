@@ -1,3 +1,12 @@
+def format_string(val):
+    if isinstance(val, dict):
+        return '[complex value]'
+    elif isinstance(val, str):
+        return f"'{val}'"
+    else:
+        return val
+
+
 def plain(diff, current_key=''):
     result = []
     for k, v in diff.items():
@@ -17,19 +26,11 @@ def plain(diff, current_key=''):
             case 'deleted':
                 result.append(f"Property '{current_key}{k}' was removed")
             case 'changed':
-                if isinstance(v['initial_value'], dict):
-                    in_val = '[complex value]'
-                else:
-                    i_val = v['initial_value']
-                    in_val = f"'{i_val}'"
-                if isinstance(v['current_value'], dict):
-                    cur_val = '[complex value]'
-                else:
-                    c_val = v['current_value']
-                    cur_val = f"'{c_val}'"
+                initial_val = format_string(v['initial_value'])
+                current_val = format_string(v['current_value'])
                 result.append(
                     f"Property '{current_key}{k}'\
- was updated. From {in_val} to {cur_val}"
+ was updated. From {initial_val} to {current_val}"
                 )
             case 'unchanged':
                 if isinstance(v['value'], dict):
